@@ -1,0 +1,67 @@
+''
+    author: Zeph Frear Hanson
+    date: 8/11/2021
+    title: Component 1(GUI)
+    description: Skeleton for what the program will end up looking like.
+'''
+
+from tkinter import *
+from tkinter import messagebox
+
+
+    
+
+root = Tk() #creates grpahics object
+root.title("Sports uniform shop")
+root.geometry("800x800+0+0")
+
+
+FONT = ("Comic Sans MS", "24", "bold")
+
+lbl_title = Label(root, text="Sports uniform shop",
+                  bg="black",
+                  fg="white", font=FONT,
+                  padx= 80, pady= 24,)
+
+lbl_title.pack()
+img_wolf = PhotoImage(file = "1.gif")
+lblpic = Label(root, image=img_wolf)
+lblpic.pack()
+
+btn_next = Button(root,text="->",
+                   command='')
+btn_next.pack()
+btn_prev = Button(root,text="<-",
+                   command='')
+btn_prev.pack()
+
+lbl_1 = Label(root, text="tracksuit")
+
+lbl_1.pack()
+btn_next = Button(root,text="buy",
+                   command='')
+btn_next.pack()
+btn_prev = Button(root,text="restock",
+                   command='')
+btn_prev.pack()
+
+lbl_1 = Label(root, text="summer hoodie")
+
+lbl_1.pack()
+btn_next = Button(root,text="buy",
+                   command='')
+btn_next.pack()
+btn_prev = Button(root,text="restock",
+                   command='')
+btn_prev.pack()
+
+
+lbl_1 = Label(root, text="winter hoodie")
+
+lbl_1.pack()
+btn_next = Button(root,text="buy",
+                   command='')
+btn_next.pack(padx=10,side=LEFT)
+btn_prev = Button(root,text="restock",
+                   command='')
+btn_prev.pack()
