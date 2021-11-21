@@ -98,22 +98,21 @@ def move(delta):
     label.config(image = img_obs[current])
 
 
-
-#make window
-root = Tk()
+root = Tk() #creates grpahics object
 root.title("Sports uniform shop")
 root.geometry("800x800+0+0")
-root.configure(bg="white")
-
 
 #title
-FONT = ("Comic Sans MS", "16", "bold")
+class Protitle:
+    def __init__(self, parent):
+        FONT = ("Comic Sans MS", "24", "bold")
 
-lbl_title = Label(root, text="Sports uniform shop",
-                  bg="black",
-                  fg="white", font=FONT,)
+        lbl_title = Label(parent, text="Sports uniform shop",
+                          bg="black",
+                          fg="white", font=FONT,
+                          padx= 80, pady= 24,)
 
-lbl_title.pack()
+        lbl_title.place(x=200, y=0)
 
 
 #image gallery
@@ -121,7 +120,7 @@ for i in range(len(image_list)):
     img_obs.append(PhotoImage(file=image_list[i]))
 
 label = Label(root, compound= TOP, image=img_obs[0])
-label.pack()
+label.place(x=140, y=90)
 
 frame = Frame(root)
 frame.pack()
@@ -132,27 +131,27 @@ frame.pack()
 
 #product type
 lbl_type = Label(root, text="Tracksuit")
-lbl_type.place(x=360, y=450)
+lbl_type.place(x=360, y=540)
 
 #buy button
 custom_button = Button(root, text="buy", command=buytr)
-custom_button.place(x=360, y=468)
+custom_button.place(x=360, y=558)
 
 #restock button
 custom_button = Button(root, text="restock", command=selltr)
-custom_button.place(x=360, y=492)
+custom_button.place(x=360, y=582)
 
 #entry for restocking
 label3 = Label(root)
-label3.place(x=360, y=550)
+label3.place(x=300, y=640)
 
 #bought message
 label1 = Label(root)
-label1.place(x=350, y=568)
+label1.place(x=320, y=658)
 
 #total stock message
 label2 = Label(root)
-label2.place(x=340, y=586)
+label2.place(x=340, y=680)
 
 
 
@@ -160,51 +159,51 @@ label2.place(x=340, y=586)
 
 #product type
 lbl_type = Label(root, text="Winter Hoodie")
-lbl_type.place(x=520, y=450)
+lbl_type.place(x=520, y=540)
 
 #buy button
 custom_button = Button(root, text="buy", command=buywh)
-custom_button.place(x=520, y=468)
+custom_button.place(x=520, y=558)
 
 #restock button
 custom_button = Button(root, text="restock", command=sellwh)
-custom_button.place(x=520, y=492)
+custom_button.place(x=520, y=582)
 
 #entry for restocking
 label3 = Label(root)
-label3.place(x=360, y=550)
+label3.place(x=300, y=640)
 
 #bought message
 label1 = Label(root)
-label1.place(x=350, y=568)
+label1.place(x=320, y=658)
 
 #total stock message
 label2 = Label(root)
-label2.place(x=340, y=586)
+label2.place(x=340, y=680)
 
 #product type
 lbl_type = Label(root, text="Summer Hoodie")
-lbl_type.place(x=100, y=450)
+lbl_type.place(x=100, y=540)
 
 #restock button
 custom_button = Button(root, text="restock", command=sellsh)
-custom_button.place(x=100, y=468)
+custom_button.place(x=100, y=558)
 
 #buy button
 custom_button = Button(root, text="buy", command=buysh)
-custom_button.place(x=100, y=492)
+custom_button.place(x=100, y=582)
 
 #entry for restocking
 label3 = Label(root)
-label3.place(x=280, y=550)
+label3.place(x=300, y=640)
 
 #bought message
 label1 = Label(root)
-label1.place(x=320, y=568)
+label1.place(x=320, y=658)
 
 #total stock message
 label2 = Label(root)
-label2.place(x=340, y=586)
+label2.place(x=340, y=680)
 
 
 
@@ -221,4 +220,9 @@ btn_pre = Button(frame, text='Next picture',
 btn_pre.pack(side=LEFT)
 
 move(0)
-root.mainloop()
+
+#main-routine
+if __name__=="__main__":
+    label = Protitle (root)
+    root.mainloop()
+    
