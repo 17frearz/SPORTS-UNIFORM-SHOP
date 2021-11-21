@@ -1,4 +1,4 @@
-''
+'''
     author: Zeph Frear Hanson
     date: 8/11/2021
     title: Component 1(GUI)
@@ -8,7 +8,12 @@
 from tkinter import *
 from tkinter import messagebox
 
+class Images:
+    def __init__(self, img_file):
+        self.img_ob = PhotoImage(file = img_file)
 
+    def get_img(self):
+        return self.img_ob
     
 
 root = Tk() #creates grpahics object
@@ -24,8 +29,9 @@ lbl_title = Label(root, text="Sports uniform shop",
                   padx= 80, pady= 24,)
 
 lbl_title.pack()
-img_wolf = PhotoImage(file = "1.gif")
-lblpic = Label(root, image=img_wolf)
+#img_wolf = PhotoImage(file = "1.gif")
+img = PhotoImage(file = "1.gif")
+lblpic = Label(root, image=img)
 lblpic.pack()
 
 btn_next = Button(root,text="->",
@@ -65,3 +71,4 @@ btn_next.pack(padx=10,side=LEFT)
 btn_prev = Button(root,text="restock",
                    command='')
 btn_prev.pack()
+
