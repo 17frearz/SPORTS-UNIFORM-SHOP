@@ -114,6 +114,13 @@ class Protitle:
 
         lbl_title.place(x=200, y=0)
 
+class Images:
+    def __init__(self, img_file):
+        self.img_ob = PhotoImage(file = img_file)
+
+    def get_img(self):
+        return self.img_ob
+
 
 #image gallery
 for i in range(len(image_list)):
@@ -226,3 +233,4 @@ if __name__=="__main__":
     label = Protitle (root)
     root.mainloop()
     
+
